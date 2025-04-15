@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "preLaunchTask": "PreRun",
+      "name": "ESP32 openOCD",
+      "type": "cppdbg",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/build",
+      "program": "${workspaceRoot}/build/blink.elf",
+      "miDebuggerPath": "C:/Users/Sru/.espressif/tools/xtensa-esp32-elf/esp-2021r1-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gdb.exe",
+      "stopAtEntry": false,
+      "setupCommands": [
+        {"text": "target remote 127.0.0.1:3333"},
+        {"text": "set remote hardware-watchpoint-limit 5"},
+        {"text": "monitor reset halt"},
+        {"text": "break app_main"},
+        {"text": "flushregs"},
+      ]
+    }
+  ]
+}
